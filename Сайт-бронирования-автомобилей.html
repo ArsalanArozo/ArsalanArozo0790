@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АвтоЭксперт - Бронирование автомобилей</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=luxury%20car%20showroom%20with%20modern%20design%2C%20premium%20cars%20on%20display%2C%20bright%20spacious%20interior%20with%20glass%20walls%2C%20elegant%20lighting%2C%20minimalist%20architecture%2C%20professional%20high-end%20photography%2C%20soft%20lighting%2C%20no%20people&width=1920&height=800&seq=123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+background: #3b82f6;
+border-radius: 50%;
+cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+width: 18px;
+height: 18px;
+background: #3b82f6;
+border-radius: 50%;
+cursor: pointer;
+}
+.custom-checkbox {
+display: none;
+}
+.custom-checkbox + label {
+position: relative;
+padding-left: 30px;
+cursor: pointer;
+display: inline-block;
+}
+.custom-checkbox + label:before {
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+background: #fff;
+border-radius: 4px;
+}
+.custom-checkbox:checked + label:before {
+background: #3b82f6;
+border-color: #3b82f6;
+}
+.custom-checkbox:checked + label:after {
+content: '';
+position: absolute;
+left: 7px;
+top: 3px;
+width: 6px;
+height: 12px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Навигация -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">Арозо_МАДИ</a>
+<nav class="hidden md:flex items-center space-x-8">
+    <a href="Сайт-бронирования-автомобилей.html" class="font-medium text-gray-900 hover:text-primary transition-colors">Главная</a>
+    <a href="Расширенный-каталог-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Каталог</a>
+    <a href="О-компании.html" class="font-medium text-gray-500 hover:text-primary transition-colors">О компании</a>
+    <a href="Контакты.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Контакты</a>
+</a>
+</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="Избранное.html" class="hidden md:flex items-center text-gray-500 hover:text-primary transition-colors">
+    <div class="w-10 h-10 flex items-center justify-center">
+        <i class="ri-heart-line ri-lg"></i>
+    </div>
+    <span class="ml-1 font-medium">Избранное</span>
+</a>
+<a href="войти.html" class="flex items-center text-gray-500 hover:text-primary transition-colors">
+    <div class="w-10 h-10 flex items-center justify-center">
+        <i class="ri-user-line ri-lg"></i>
+    </div>
+    <span class="hidden md:inline ml-1 font-medium">Войти</span>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero секция -->
+<section class="hero-section relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Найдите автомобиль своей мечты (МАДИ)</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Широкий выбор премиальных автомобилей с возможностью онлайн-бронирования и тест-драйва</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#catalog" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Смотреть каталог</a>
+<a href="#how-it-works" class="bg-white text-primary border border-primary px-8 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Как это работает</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Поиск автомобиля -->
+<section class="py-12 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-10">Быстрый поиск автомобиля</h2>
+<div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Марка автомобиля</label>
+<div class="relative">
+<div class="w-full bg-white border border-gray-300 rounded flex items-center px-3 py-2">
+<span class="flex-grow">Выберите марку</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Модель</label>
+<div class="relative">
+<div class="w-full bg-white border border-gray-300 rounded flex items-center px-3 py-2">
+<span class="flex-grow">Выберите модель</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Тип кузова</label>
+<div class="relative">
+<div class="w-full bg-white border border-gray-300 rounded flex items-center px-3 py-2">
+<span class="flex-grow">Любой</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<label class="block text-sm font-medium text-gray-700 mb-2">Ценовой диапазон</label>
+<div class="flex items-center gap-4">
+<span class="text-gray-500 whitespace-nowrap">от 1 000 000 ₽</span>
+<input type="range" min="1000000" max="15000000" value="5000000" class="w-full h-2 bg-gray-200 rounded-full appearance-none">
+<span class="text-gray-500 whitespace-nowrap">до 15 000 000 ₽</span>
+</div>
+</div>
+<div class="mt-6 flex justify-center">
+<button class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Найти автомобили</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Популярные модели -->
+<section id="catalog" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex justify-between items-center mb-10">
+<h2 class="text-3xl font-bold">Популярные модели</h2>
+<a href="#" class="text-primary font-medium hover:underline">Смотреть все</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Карточка автомобиля 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=BMW%20X5%20SUV%20white%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20vehicle&width=600&height=400&seq=1&orientation=landscape" alt="BMW X5" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="text-xl font-bold">BMW X5</h3>
+<p class="text-gray-500">2023 г., 3.0 л, 249 л.с.</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
+<i class="ri-heart-line ri-lg"></i>
+</button>
+</div>
+<div class="flex justify-between items-center mb-5">
+<div>
+<span class="text-2xl font-bold">6 790 000 ₽</span>
+</div>
+<div class="text-sm text-gray-500">
+<span>от 85 000 ₽/мес</span>
+</div>
+</div>
+<div class="flex space-x-4 text-sm text-gray-500 mb-5">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-dashboard-3-line"></i>
+</div>
+<span>12 000 км</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-gas-station-line"></i>
+</div>
+<span>Дизель</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-settings-line"></i>
+</div>
+<span>Автомат</span>
+</div>
+</div>
+<a onclick="window.location.href='booking.html?car=BMW X5&price=6790000&year=2023&image=bmw-x5.jpg'" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+</div>
+</div>
+<!-- Карточка автомобиля 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Mercedes-Benz%20E-Class%20black%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20sedan&width=600&height=400&seq=2&orientation=landscape" alt="Mercedes-Benz E-Class" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="text-xl font-bold">Mercedes-Benz E-Class</h3>
+<p class="text-gray-500">2022 г., 2.0 л, 197 л.с.</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
+<i class="ri-heart-line ri-lg"></i>
+</button>
+</div>
+<div class="flex justify-between items-center mb-5">
+<div>
+<span class="text-2xl font-bold">5 950 000 ₽</span>
+</div>
+<div class="text-sm text-gray-500">
+<span>от 75 000 ₽/мес</span>
+</div>
+</div>
+<div class="flex space-x-4 text-sm text-gray-500 mb-5">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-dashboard-3-line"></i>
+</div>
+<span>8 500 км</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-gas-station-line"></i>
+</div>
+<span>Бензин</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-settings-line"></i>
+</div>
+<span>Автомат</span>
+</div>
+</div>
+<a onclick="window.location.href='booking.html?car=BMW X5&price=6790000&year=2023&image=bmw-x5.jpg'" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+</div>
+</div>
+<!-- Карточка автомобиля 3 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Audi%20Q7%20SUV%20blue%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20vehicle&width=600&height=400&seq=3&orientation=landscape" alt="Audi Q7" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="text-xl font-bold">Audi Q7</h3>
+<p class="text-gray-500">2021 г., 3.0 л, 286 л.с.</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary">
+<i class="ri-heart-line ri-lg"></i>
+</button>
+</div>
+<div class="flex justify-between items-center mb-5">
+<div>
+<span class="text-2xl font-bold">7 250 000 ₽</span>
+</div>
+<div class="text-sm text-gray-500">
+<span>от 90 000 ₽/мес</span>
+</div>
+</div>
+<div class="flex space-x-4 text-sm text-gray-500 mb-5">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-dashboard-3-line"></i>
+</div>
+<span>15 200 км</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-gas-station-line"></i>
+</div>
+<span>Дизель</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-settings-line"></i>
+</div>
+<span>Автомат</span>
+</div>
+</div>
+<a onclick="window.location.href='booking.html?car=BMW X5&price=6790000&year=2023&image=bmw-x5.jpg'" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Как это работает -->
+<section id="how-it-works" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">Как забронировать автомобиль</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Шаг 1 -->
+<div class="text-center">
+<div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-search-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Выберите автомобиль</h3>
+<p class="text-gray-600">Просмотрите наш каталог и найдите подходящий автомобиль</p>
+</div>
+<!-- Шаг 2 -->
+<div class="text-center">
+<div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-calendar-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Выберите дату</h3>
+<p class="text-gray-600">Укажите удобную дату для тест-драйва или осмотра</p>
+</div>
+<!-- Шаг 3 -->
+<div class="text-center">
+<div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-user-add-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Оставьте заявку</h3>
+<p class="text-gray-600">Заполните форму бронирования с вашими контактными данными</p>
+</div>
+<!-- Шаг 4 -->
+<div class="text-center">
+<div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-check-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Получите подтверждение</h3>
+<p class="text-gray-600">Мы свяжемся с вами для подтверждения бронирования</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Преимущества -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">Наши преимущества</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Преимущество 1 -->
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-shield-check-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Гарантия качества</h3>
+<p class="text-gray-600">Все автомобили проходят тщательную техническую проверку перед поступлением в продажу</p>
+</div>
+<!-- Преимущество 2 -->
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-bank-card-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Выгодные условия</h3>
+<p class="text-gray-600">Кредит, лизинг, трейд-ин и другие финансовые программы для приобретения автомобиля</p>
+</div>
+<!-- Преимущество 3 -->
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-customer-service-2-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Персональный подход</h3>
+<p class="text-gray-600">Индивидуальный менеджер поможет с выбором и ответит на все вопросы</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Отзывы клиентов -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">Отзывы наших клиентов</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Отзыв 1 -->
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20Russian%20man%20with%20short%20brown%20hair%2C%20neutral%20expression%2C%20business%20casual%20attire%2C%20clean%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=4&orientation=squarish" alt="Александр Петров" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">Александр Петров</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Отличный сервис! Быстро подобрали автомобиль по моим требованиям. Особенно понравилась возможность онлайн-бронирования без посещения салона. Рекомендую!"</p>
+</div>
+<!-- Отзыв 2 -->
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Russian%20woman%20with%20blonde%20hair%2C%20friendly%20smile%2C%20casual%20professional%20attire%2C%20clean%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=5&orientation=squarish" alt="Екатерина Смирнова" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">Екатерина Смирнова</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Приобрела здесь свой первый автомобиль. Менеджеры очень внимательные, помогли с выбором и оформлением. Процесс бронирования через сайт оказался очень удобным."</p>
+</div>
+<!-- Отзыв 3 -->
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20an%20older%20Russian%20man%20with%20gray%20hair%20and%20glasses%2C%20serious%20expression%2C%20formal%20business%20attire%2C%20clean%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=6&orientation=squarish" alt="Дмитрий Иванов" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-bold">Дмитрий Иванов</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Уже второй раз приобретаю автомобиль в этом салоне. Ценю профессионализм сотрудников и качество обслуживания. Система уведомлений о статусе заказа работает отлично."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Форма обратной связи -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="p-8 lg:p-12">
+<h2 class="text-3xl font-bold mb-6">Остались вопросы?</h2>
+<p class="text-gray-600 mb-8">Заполните форму, и наш менеджер свяжется с вами в ближайшее время</p>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Имя</label>
+<input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ваше имя">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Телефон</label>
+<input type="tel" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+7 (___) ___-__-__">
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 mb-2">Сообщение</label>
+<textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ваш вопрос или комментарий"></textarea>
+</div>
+<div class="mb-6">
+<input type="checkbox" id="agree" class="custom-checkbox">
+<label for="agree" class="text-sm text-gray-600">Я согласен на обработку персональных данных</label>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Отправить</button>
+</form>
+</div>
+<div class="bg-gray-100 p-8 lg:p-12 flex flex-col justify-center">
+<h3 class="text-2xl font-bold mb-6">Контактная информация</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Адрес</h4>
+<p class="text-gray-600">125319, Москва, Ленинградский проспект, 64</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Телефон</h4>
+<p class="text-gray-600">+7 (999) 962-63-38</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Email</h4>
+<p class="text-gray-600">arsalanarezo123@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Режим работы</h4>
+<p class="text-gray-600">Ежедневно с 9:00 до 21:00</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-medium mb-3">Мы в социальных сетях</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-blue-200 transition-colors">
+<i class="ri-vk-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-blue-200 transition-colors">
+<i class="ri-telegram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-blue-200 transition-colors">
+<i class="ri-youtube-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary hover:bg-blue-200 transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Футер -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Арозо_МАДИ</a>
+<p class="text-gray-400 mb-6">Ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор новых и подержанных автомобилей премиум-класса.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-vk-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-telegram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Навигация</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Каталог автомобилей</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Услуги</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Услуги</h4>
+<ul class="space-y-3">
+    <li><a href="Сайт-бронирования-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+    <li><a href="Расширенный-каталог-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Каталог автомобилей</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Услуги</a></li>
+    <li><a href="О-компании.html" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Контакты</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400"> 125319, Москва, Ленинградский проспект, 64</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">+7 (999) 962-63-38</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">arsalanarezo123@gmail.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-400">Ежедневно с 9:00 до 21:00</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 АвтоЭксперт. Все права защищены.</p>
+<div class="flex items-center space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Пользовательское соглашение</a>
+</div>
+</div>
+</div>
+</footer>
+<script id="formScript">
+document.addEventListener('DOMContentLoaded', function() {
+// Обработка формы обратной связи
+const contactForm = document.querySelector('form');
+const checkbox = document.getElementById('agree');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+if (!checkbox.checked) {
+alert('Пожалуйста, подтвердите согласие на обработку персональных данных');
+return;
+}
+// Здесь будет код отправки формы
+alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+contactForm.reset();
+});
+}
+// Маска для телефона
+const phoneInput = document.querySelector('input[type="tel"]');
+if (phoneInput) {
+phoneInput.addEventListener('input', function(e) {
+let value = e.target.value.replace(/\D/g, '');
+if (value.length > 0 && value[0] !== '7') {
+value = '7' + value;
+}
+let formattedValue = '';
+if (value.length > 0) {
+formattedValue = '+' + value.substring(0, 1);
+}
+if (value.length > 1) {
+formattedValue += ' (' + value.substring(1, 4);
+}
+if (value.length > 4) {
+formattedValue += ') ' + value.substring(4, 7);
+}
+if (value.length > 7) {
+formattedValue += '-' + value.substring(7, 9);
+}
+if (value.length > 9) {
+formattedValue += '-' + value.substring(9, 11);
+}
+e.target.value = formattedValue;
+});
+}
+});
+</script>
+<script id="rangeSliderScript">
+document.addEventListener('DOMContentLoaded', function() {
+const rangeSlider = document.querySelector('input[type="range"]');
+if (rangeSlider) {
+rangeSlider.addEventListener('input', function() {
+const value = parseInt(this.value);
+const formattedValue = new Intl.NumberFormat('ru-RU').format(value);
+const priceLabels = this.parentElement.querySelectorAll('span');
+if (priceLabels.length >= 2) {
+priceLabels[1].textContent = `до ${formattedValue} ₽`;
+}
+});
+}
+});
+</script>
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const menuButton = document.querySelector('button.md\\:hidden');
+if (menuButton) {
+menuButton.addEventListener('click', function() {
+// Здесь будет код открытия мобильного меню
+alert('Мобильное меню будет реализовано в следующей версии');
+});
+}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О компании АвтоЭксперт</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+    background-image: url('https://readdy.ai/api/search-image?query=modern%2520luxury%2520car%2520dealership%2520office%2520with%2520glass%2520walls%252C%2520elegant%2520reception%2520area%252C%2520premium%2520cars%2520visible%2520in%2520showroom%252C%2520professional%2520staff%2520in%2520business%2520attire%252C%2520bright%2520spacious%2520interior%2520with%2520minimalist%2520design%252C%2520high-end%2520finishes%252C%2520soft%2520lighting%252C%2520professional%2520photography&width=1920&height=800&seq=123&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+}
+.hero-overlay {
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.4) 100%);
+}
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #e5e7eb;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+.timeline-item:nth-child(odd) {
+    padding-right: 50px;
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    padding-left: 50px;
+    margin-left: auto;
+}
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #3b82f6;
+    border-radius: 50%;
+    top: 0;
+    z-index: 1;
+}
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+.team-card:hover .team-info {
+    transform: translateY(0);
+}
+.certificate-slider {
+    animation: slideLeft 30s linear infinite;
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Навигация -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">Арозо_МАДИ</a>
+<nav class="hidden md:flex items-center space-x-8">
+    <a href="Сайт-бронирования-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Главная</a>
+    <a href="Расширенный-каталог-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Каталог</a>
+    <a href="О-компании.html" class="font-medium text-gray-900 hover:text-primary transition-colors">О компании</a>
+    <a href="#" class="font-medium text-gray-500 hover:text-primary transition-colors">Контакты</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="#" class="hidden md:flex items-center text-gray-500 hover:text-primary transition-colors">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-heart-line ri-lg"></i>
+</div>
+<span class="ml-1 font-medium">Избранное</span>
+</a>
+<a href="#" class="flex items-center text-gray-500 hover:text-primary transition-colors">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<span class="hidden md:inline ml-1 font-medium">Войти</span>
+</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Hero секция -->
+<section class="hero-section relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">О компании АвтоЭксперт</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Мы — надежный партнер в мире премиальных автомобилей с многолетним опытом работы на российском рынке</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+<div class="bg-white bg-opacity-80 p-6 rounded-lg shadow-sm">
+<div class="text-3xl font-bold text-primary mb-2">15+</div>
+<div class="text-gray-700">лет на автомобильном рынке</div>
+</div>
+<div class="bg-white bg-opacity-80 p-6 rounded-lg shadow-sm">
+<div class="text-3xl font-bold text-primary mb-2">5000+</div>
+<div class="text-gray-700">довольных клиентов</div>
+</div>
+<div class="bg-white bg-opacity-80 p-6 rounded-lg shadow-sm">
+<div class="text-3xl font-bold text-primary mb-2">300+</div>
+<div class="text-gray-700">автомобилей в наличии</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- История компании -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">История компании</h2>
+<div class="relative timeline-container">
+<div class="timeline-item w-1/2 mb-16 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2008</h3>
+<p class="text-gray-700">Основание компании АвтоЭксперт. Открытие первого автосалона в Москве с небольшим штатом сотрудников и ассортиментом из 30 автомобилей.</p>
+</div>
+</div>
+<div class="timeline-item w-1/2 mb-16 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2012</h3>
+<p class="text-gray-700">Расширение бизнеса и открытие второго автосалона. Начало сотрудничества с ведущими европейскими брендами автомобилей.</p>
+</div>
+</div>
+<div class="timeline-item w-1/2 mb-16 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2015</h3>
+<p class="text-gray-700">Запуск собственного сервисного центра с полным спектром услуг по обслуживанию и ремонту автомобилей премиум-класса.</p>
+</div>
+</div>
+<div class="timeline-item w-1/2 mb-16 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2018</h3>
+<p class="text-gray-700">Юбилей компании и открытие флагманского автосалона в центре Москвы. Расширение ассортимента до 200+ автомобилей.</p>
+</div>
+</div>
+<div class="timeline-item w-1/2 mb-16 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2020</h3>
+<p class="text-gray-700">Запуск онлайн-платформы для бронирования и покупки автомобилей. Внедрение инновационных технологий в процесс обслуживания клиентов.</p>
+</div>
+</div>
+<div class="timeline-item w-1/2 relative">
+<div class="timeline-dot"></div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-primary mb-2">2025</h3>
+<p class="text-gray-700">Сегодня АвтоЭксперт — это сеть из 5 автосалонов, 3 сервисных центров и команда из 150+ профессионалов, готовых помочь вам с выбором идеального автомобиля.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Миссия и ценности -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-3xl font-bold mb-6">Наша миссия и ценности</h2>
+<p class="text-lg text-gray-700">Мы стремимся сделать процесс выбора и приобретения автомобиля максимально комфортным и прозрачным для каждого клиента, предоставляя высококачественный сервис и индивидуальный подход.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-shield-check-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Качество</h3>
+<p class="text-gray-600">Мы предлагаем только проверенные автомобили, прошедшие тщательную техническую диагностику</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-customer-service-2-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Клиентоориентированность</h3>
+<p class="text-gray-600">Индивидуальный подход к каждому клиенту и внимание к его потребностям</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-hand-heart-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Доверие</h3>
+<p class="text-gray-600">Прозрачность всех процессов и честные отношения с клиентами и партнерами</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-rocket-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Инновации</h3>
+<p class="text-gray-600">Постоянное развитие и внедрение современных технологий для улучшения сервиса</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Преимущества работы -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Преимущества работы с нами</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-car-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Широкий ассортимент</h3>
+<p class="text-gray-600">Более 300 автомобилей различных марок и моделей в наличии и под заказ</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-bank-card-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Гибкие финансовые решения</h3>
+<p class="text-gray-600">Кредит, лизинг, рассрочка и специальные программы финансирования</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-exchange-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Трейд-ин</h3>
+<p class="text-gray-600">Возможность обмена вашего автомобиля на новый с доплатой</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-tools-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Сервисное обслуживание</h3>
+<p class="text-gray-600">Полный спектр услуг по обслуживанию и ремонту автомобилей</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-shield-star-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Гарантия</h3>
+<p class="text-gray-600">Расширенная гарантия на все автомобили и послепродажное обслуживание</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-global-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Онлайн-сервисы</h3>
+<p class="text-gray-600">Возможность бронирования, покупки и оформления документов онлайн</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Команда специалистов -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Наша команда</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="team-card relative rounded-lg overflow-hidden shadow-sm group">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520confident%2520middle-aged%2520Russian%2520man%2520in%2520business%2520suit%252C%2520short%2520dark%2520hair%252C%2520serious%2520expression%252C%2520office%2520setting%252C%2520neutral%2520background%252C%2520high%2520quality%2520portrait&width=400&height=500&seq=10&orientation=portrait" alt="Андрей Соколов" class="w-full h-full object-cover">
+<div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 opacity-0 transition-opacity duration-300"></div>
+<div class="team-info absolute inset-0 p-6 flex flex-col justify-end text-white transform translate-y-4 transition-transform duration-300">
+<h3 class="text-xl font-bold">Арозр Арсалан</h3>
+<p class="text-white text-opacity-90 mb-2">Генеральный директор</p>
+<p class="text-white text-opacity-80 text-sm">Более 20 лет опыта в автомобильном бизнесе. Отвечает за стратегическое развитие компании и формирование команды профессионалов.</p>
+</div>
+</div>
+<div class="team-card relative rounded-lg overflow-hidden shadow-sm group">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520confident%2520Russian%2520woman%2520in%2520business%2520attire%252C%2520shoulder-length%2520brown%2520hair%252C%2520friendly%2520smile%252C%2520office%2520setting%252C%2520neutral%2520background%252C%2520high%2520quality%2520portrait&width=400&height=500&seq=11&orientation=portrait" alt="Елена Васильева" class="w-full h-full object-cover">
+<div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 opacity-0 transition-opacity duration-300"></div>
+<div class="team-info absolute inset-0 p-6 flex flex-col justify-end text-white transform translate-y-4 transition-transform duration-300">
+<h3 class="text-xl font-bold">Елена Васильева</h3>
+<p class="text-white text-opacity-90 mb-2">Коммерческий директор</p>
+<p class="text-white text-opacity-80 text-sm">Эксперт в области продаж и маркетинга с 15-летним стажем. Отвечает за развитие продаж и клиентский сервис.</p>
+</div>
+</div>
+<div class="team-card relative rounded-lg overflow-hidden shadow-sm group">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520young%2520Russian%2520man%2520in%2520business%2520casual%2520attire%252C%2520short%2520blonde%2520hair%252C%2520glasses%252C%2520friendly%2520expression%252C%2520office%2520setting%252C%2520neutral%2520background%252C%2520high%2520quality%2520portrait&width=400&height=500&seq=12&orientation=portrait" alt="Максим Новиков" class="w-full h-full object-cover">
+<div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 opacity-0 transition-opacity duration-300"></div>
+<div class="team-info absolute inset-0 p-6 flex flex-col justify-end text-white transform translate-y-4 transition-transform duration-300">
+<h3 class="text-xl font-bold">Максим Новиков</h3>
+<p class="text-white text-opacity-90 mb-2">Технический директор</p>
+<p class="text-white text-opacity-80 text-sm">Сертифицированный инженер с опытом работы более 12 лет. Руководит сервисным центром и техническими специалистами.</p>
+</div>
+</div>
+<div class="team-card relative rounded-lg overflow-hidden shadow-sm group">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520Russian%2520woman%2520in%2520business%2520attire%252C%2520long%2520dark%2520hair%252C%2520confident%2520expression%252C%2520office%2520setting%252C%2520neutral%2520background%252C%2520high%2520quality%2520portrait&width=400&height=500&seq=13&orientation=portrait" alt="Ольга Смирнова" class="w-full h-full object-cover">
+<div class="team-overlay absolute inset-0 bg-primary bg-opacity-80 opacity-0 transition-opacity duration-300"></div>
+<div class="team-info absolute inset-0 p-6 flex flex-col justify-end text-white transform translate-y-4 transition-transform duration-300">
+<h3 class="text-xl font-bold">Ольга Смирнова</h3>
+<p class="text-white text-opacity-90 mb-2">Руководитель отдела продаж</p>
+<p class="text-white text-opacity-80 text-sm">10 лет опыта в продажах премиальных автомобилей. Координирует работу менеджеров и обеспечивает высокий уровень обслуживания.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Сертификаты и награды -->
+<section class="py-16 bg-white overflow-hidden">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Сертификаты и награды</h2>
+<div class="relative">
+<div class="certificate-slider flex space-x-8">
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-award-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Лучший дилер 2023</h3>
+<p class="text-gray-600">Награда от BMW за высокие показатели продаж и качество обслуживания клиентов</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-medal-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Сертификат ISO 9001</h3>
+<p class="text-gray-600">Международный сертификат качества менеджмента и обслуживания клиентов</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-trophy-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Автодилер года</h3>
+<p class="text-gray-600">Премия "Автодилер года 2022" в номинации "Лучший клиентский сервис"</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-star-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Выбор клиентов</h3>
+<p class="text-gray-600">Награда "Выбор клиентов 2021" по результатам независимого опроса покупателей</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-award-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Лучший дилер 2023</h3>
+<p class="text-gray-600">Награда от BMW за высокие показатели продаж и качество обслуживания клиентов</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-medal-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Сертификат ISO 9001</h3>
+<p class="text-gray-600">Международный сертификат качества менеджмента и обслуживания клиентов</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-trophy-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Автодилер года</h3>
+<p class="text-gray-600">Премия "Автодилер года 2022" в номинации "Лучший клиентский сервис"</p>
+</div>
+<div class="min-w-[300px] bg-gray-50 p-6 rounded-lg shadow-sm">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-star-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Выбор клиентов</h3>
+<p class="text-gray-600">Награда "Выбор клиентов 2021" по результатам независимого опроса покупателей</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Партнеры -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Наши партнеры</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-bmw-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">BMW</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-mercedes-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">Mercedes-Benz</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-audi-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">Audi</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-bank-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">Сбербанк</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-bank-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">ВТБ</p>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-shield-check-fill ri-3x text-gray-700"></i>
+</div>
+<p class="font-medium text-gray-700">Ингосстрах</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Призыв к действию -->
+<section class="py-16 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold text-white mb-6">Готовы выбрать автомобиль своей мечты?</h2>
+<p class="text-xl text-white text-opacity-90 mb-8 max-w-3xl mx-auto">Наши специалисты помогут подобрать идеальный автомобиль, соответствующий вашим требованиям и бюджету</p>
+<a href="#" class="inline-block bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Связаться с нами</a>
+</div>
+</section>
+
+<!-- Футер -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Арозо_МАДИ</a>
+<p class="text-gray-400 mb-6">Ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор новых и подержанных автомобилей премиум-класса.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-vk-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-telegram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Навигация</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/88a32add-3876-4202-9078-2853b1e64b68/c26ac2a4-accb-4bf4-93d6-bd4403a898e8" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Каталог автомобилей</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Услуги</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Услуги</h4>
+<ul class="space-y-3">
+    <li><a href="Сайт-бронирования-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+    <li><a href="Расширенный-каталог-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Каталог автомобилей</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Услуги</a></li>
+    <li><a href="О-компании.html" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Контакты</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400">125319, Москва, Ленинградский проспект, 64</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">+7 (999) 962-63-38</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">arsalanarezo123@gmail.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-400">Ежедневно с 9:00 до 21:00</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 АвтоЭксперт. Все права защищены.</p>
+<div class="flex items-center space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Пользовательское соглашение</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('button.md\\:hidden');
+    if (menuButton) {
+        menuButton.addEventListener('click', function() {
+            alert('Мобильное меню будет реализовано в следующей версии');
+        });
+    }
+});
+</script>
+
+<script id="teamCardScript">
+document.addEventListener('DOMContentLoaded', function() {
+    const teamCards = document.querySelectorAll('.team-card');
+    if (teamCards.length) {
+        teamCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.team-overlay').style.opacity = '1';
+                this.querySelector('.team-info').style.transform = 'translateY(0)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.team-overlay').style.opacity = '0';
+                this.querySelector('.team-info').style.transform = 'translateY(4px)';
+            });
+        });
+    }
+});
+</script>
+</body>
+</html>

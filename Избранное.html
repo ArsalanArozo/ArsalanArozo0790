@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АвтоЭксперт - Избранное</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#f59e0b'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .empty-heart {
+            color: #9CA3AF;
+        }
+        .filled-heart {
+            color: #EF4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Навигация -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="Сайт-бронирования-автомобилей.html" class="text-3xl font-['Pacifico'] text-primary">Арозо_МАДИ</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="Сайт-бронирования-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Главная</a>
+                <a href="Расширенный-каталог-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Каталог</a>
+                <a href="О-компании.html" class="font-medium text-gray-500 hover:text-primary transition-colors">О компании</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-primary transition-colors">Контакты</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="Избранное.html" class="hidden md:flex items-center text-primary transition-colors">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-heart-fill ri-lg"></i>
+                    </div>
+                    <span class="ml-1 font-medium">Избранное</span>
+                </a>
+                <a href="войти.html" class="flex items-center text-gray-500 hover:text-primary transition-colors">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-user-line ri-lg"></i>
+                    </div>
+                    <span class="hidden md:inline ml-1 font-medium">Войти</span>
+                </a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h1 class="text-3xl font-bold">Избранное</h1>
+                <div class="text-sm text-gray-500">
+                    <span id="favoritesCount">3</span> автомобиля
+                </div>
+            </div>
+
+            <!-- Список избранных автомобилей -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="favoritesList">
+                <!-- Карточка автомобиля 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow relative">
+                    <button class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center text-white bg-red-500 rounded-full hover:bg-red-600 transition-colors">
+                        <i class="ri-heart-fill ri-lg filled-heart"></i>
+                    </button>
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=BMW%20X5%20SUV%20white%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20vehicle&width=600&height=400&seq=1&orientation=landscape" alt="BMW X5" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold">BMW X5</h3>
+                                <p class="text-gray-500">2023 г., 3.0 л, 249 л.с.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <div>
+                                <span class="text-2xl font-bold">6 790 000 ₽</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>от 85 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 text-sm text-gray-500 mb-5">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-dashboard-3-line"></i>
+                                </div>
+                                <span>12 000 км</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-gas-station-line"></i>
+                                </div>
+                                <span>Дизель</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-settings-line"></i>
+                                </div>
+                                <span>Автомат</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Карточка автомобиля 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow relative">
+                    <button class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center text-white bg-red-500 rounded-full hover:bg-red-600 transition-colors">
+                        <i class="ri-heart-fill ri-lg filled-heart"></i>
+                    </button>
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Mercedes-Benz%20E-Class%20black%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20sedan&width=600&height=400&seq=2&orientation=landscape" alt="Mercedes-Benz E-Class" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold">Mercedes-Benz E-Class</h3>
+                                <p class="text-gray-500">2022 г., 2.0 л, 197 л.с.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <div>
+                                <span class="text-2xl font-bold">5 950 000 ₽</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>от 75 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 text-sm text-gray-500 mb-5">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-dashboard-3-line"></i>
+                                </div>
+                                <span>8 500 км</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-gas-station-line"></i>
+                                </div>
+                                <span>Бензин</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-settings-line"></i>
+                                </div>
+                                <span>Автомат</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Карточка автомобиля 3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow relative">
+                    <button class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center text-white bg-red-500 rounded-full hover:bg-red-600 transition-colors">
+                        <i class="ri-heart-fill ri-lg filled-heart"></i>
+                    </button>
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Audi%20Q7%20SUV%20blue%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20vehicle&width=600&height=400&seq=3&orientation=landscape" alt="Audi Q7" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold">Audi Q7</h3>
+                                <p class="text-gray-500">2021 г., 3.0 л, 286 л.с.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <div>
+                                <span class="text-2xl font-bold">7 250 000 ₽</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>от 90 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 text-sm text-gray-500 mb-5">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-dashboard-3-line"></i>
+                                </div>
+                                <span>15 200 км</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-gas-station-line"></i>
+                                </div>
+                                <span>Дизель</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                    <i class="ri-settings-line"></i>
+                                </div>
+                                <span>Автомат</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block w-full bg-primary text-white text-center py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пустое состояние -->
+            <div id="emptyState" class="hidden text-center py-16">
+                <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center text-gray-300">
+                    <i class="ri-heart-line ri-4x"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-3">В избранном пока ничего нет</h2>
+                <p class="text-gray-600 mb-6">Добавляйте понравившиеся автомобили, нажимая на значок ♡</p>
+                <a href="Расширенный-каталог-автомобилей.html" class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">Перейти в каталог</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Арозо_МАДИ</a>
+                    <p class="text-gray-400 mb-6">Ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор новых и подержанных автомобилей премиум-класса.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-vk-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-telegram-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="Сайт-бронирования-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+                        <li><a href="Расширенный-каталог-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Каталог</a></li>
+                        <li><a href="О-компании.html" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Услуги</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Бронирование</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Тест-драйв</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Кредитование</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Страхование</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">125319, Москва, Ленинградский проспект, 64</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+7 (999) 962-63-38</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">arsalanarezo123@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-400">Ежедневно с 9:00 до 21:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 АвтоЭксперт. Все права защищены.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка удаления из избранного
+            const favoriteButtons = document.querySelectorAll('.filled-heart');
+            const favoritesList = document.getElementById('favoritesList');
+            const emptyState = document.getElementById('emptyState');
+            const favoritesCount = document.getElementById('favoritesCount');
+            
+            let count = 3; // Начальное количество избранных
+            
+            favoriteButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const card = this.closest('div[class*="grid-cols-3"] > div');
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.remove();
+                        count--;
+                        favoritesCount.textContent = count;
+                        
+                        if (count === 0) {
+                            favoritesList.classList.add('hidden');
+                            emptyState.classList.remove('hidden');
+                        }
+                    }, 300);
+                });
+            });
+            
+            // Обработка мобильного меню
+            const menuButton = document.querySelector('button.md\\:hidden');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    alert('Мобильное меню будет реализовано в следующей версии');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

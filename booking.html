@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование автомобиля | Арозо_МАДИ</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#f59e0b'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .custom-checkbox {
+            display: none;
+        }
+        .custom-checkbox + label {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .custom-checkbox + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            background: #fff;
+            border-radius: 4px;
+        }
+        .custom-checkbox:checked + label:before {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .custom-checkbox:checked + label:after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 3px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Навигация -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="Сайт-бронирования-автомобилей.html" class="text-3xl font-['Pacifico'] text-primary">Арозо_МАДИ</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="Сайт-бронирования-автомобилей.html" class="font-medium text-gray-500 hover:text-primary transition-colors">Главная</a>
+                <a href="Расширенный-каталог-автомобилей.html" class="font-medium text-primary transition-colors border-b-2 border-primary pb-1">Каталог</a>
+                <a href="О-компании.html" class="font-medium text-gray-500 hover:text-primary transition-colors">О компании</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-primary transition-colors">Контакты</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hidden md:flex items-center text-gray-500 hover:text-primary transition-colors">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-heart-line ri-lg"></i>
+                    </div>
+                    <span class="ml-1 font-medium">Избранное</span>
+                </a>
+                <a href="#" class="flex items-center text-gray-500 hover:text-primary transition-colors">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <i class="ri-user-line ri-lg"></i>
+                    </div>
+                    <span class="hidden md:inline ml-1 font-medium">Войти</span>
+                </a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Информация об автомобиле -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+                    <h2 class="text-2xl font-bold mb-6">Выбранный автомобиль</h2>
+                    
+                    <div class="mb-6">
+                        <div class="h-64 overflow-hidden rounded-lg mb-4">
+                            <img src="https://readdy.ai/api/search-image?query=BMW%20X5%20SUV%20white%20color%20on%20clean%20white%20background%2C%20professional%20car%20photography%2C%20studio%20lighting%2C%20high%20resolution%2C%20detailed%2C%20luxury%20vehicle&width=600&height=400&seq=1&orientation=landscape" alt="BMW X5" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold">BMW X5</h3>
+                                <p class="text-gray-500">2023 г., 3.0 л, 249 л.с.</p>
+                            </div>
+                            <div>
+                                <span class="text-2xl font-bold">6 790 000 ₽</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-dashboard-3-line"></i>
+                                </div>
+                                <span>12 000 км</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-gas-station-line"></i>
+                                </div>
+                                <span>Дизель</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-settings-line"></i>
+                                </div>
+                                <span>Автомат</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-paint-brush-line"></i>
+                                </div>
+                                <span>Белый</span>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-medium mb-2">Комплектация:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li class="flex items-start">
+                                    <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                                    <span>Кожаный салон</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                                    <span>Панорамная крыша</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                                    <span>Камера 360°</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                                    <span>Адаптивный круиз-контроль</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-check-line text-green-500 mt-1 mr-2"></i>
+                                    <span>Подогрев всех сидений</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Форма бронирования -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h2 class="text-2xl font-bold mb-6">Форма бронирования</h2>
+                    
+                    <form id="booking-form">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Выберите дату и время</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">Дата</label>
+                                    <input type="date" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" min="<?= date('Y-m-d') ?>">
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">Время</label>
+                                    <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Контактные данные</label>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="ФИО" required>
+                                </div>
+                                <div>
+                                    <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Телефон" required>
+                                </div>
+                                <div>
+                                    <input type="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Тип бронирования</label>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <input type="radio" id="booking-type-1" name="booking-type" value="test-drive" class="w-4 h-4 text-primary focus:ring-primary" checked>
+                                    <label for="booking-type-1" class="ml-2 text-gray-700">Тест-драйв</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="booking-type-2" name="booking-type" value="viewing" class="w-4 h-4 text-primary focus:ring-primary">
+                                    <label for="booking-type-2" class="ml-2 text-gray-700">Осмотр в салоне</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="booking-type-3" name="booking-type" value="online" class="w-4 h-4 text-primary focus:ring-primary">
+                                    <label for="booking-type-3" class="ml-2 text-gray-700">Онлайн-консультация</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Дополнительные услуги</label>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="service-1" name="services" value="trade-in" class="w-4 h-4 text-primary rounded focus:ring-primary">
+                                    <label for="service-1" class="ml-2 text-gray-700">Оценка моего автомобиля (Trade-in)</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="service-2" name="services" value="credit" class="w-4 h-4 text-primary rounded focus:ring-primary">
+                                    <label for="service-2" class="ml-2 text-gray-700">Консультация по кредиту</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="service-3" name="services" value="insurance" class="w-4 h-4 text-primary rounded focus:ring-primary">
+                                    <label for="service-3" class="ml-2 text-gray-700">Страхование</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Комментарий</label>
+                            <textarea rows="3" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ваши пожелания или вопросы"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-start">
+                                <input type="checkbox" id="agree" class="custom-checkbox" required>
+                                <label for="agree" class="text-sm text-gray-600 ml-2">Я согласен на обработку персональных данных и ознакомлен с <a href="#" class="text-primary hover:underline">политикой конфиденциальности</a></label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors">Подтвердить бронирование</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Арозо_МАДИ</a>
+                    <p class="text-gray-400 mb-6">Ваш надежный партнер в мире автомобилей. Мы предлагаем широкий выбор новых и подержанных автомобилей премиум-класса.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-vk-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-telegram-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="Сайт-бронирования-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Главная</a></li>
+                        <li><a href="Расширенный-каталог-автомобилей.html" class="text-gray-400 hover:text-white transition-colors">Каталог автомобилей</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Услуги</a></li>
+                        <li><a href="О-компании.html" class="text-gray-400 hover:text-white transition-colors">О компании</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">125319, Москва, Ленинградский проспект, 64</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+7 (999) 962-63-38</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">arsalanarezo123@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-400">Ежедневно с 9:00 до 21:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Арозо_МАДИ. Все права защищены.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка формы бронирования
+            const bookingForm = document.getElementById('booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Проверка согласия на обработку данных
+                    const agreeCheckbox = document.getElementById('agree');
+                    if (!agreeCheckbox.checked) {
+                        alert('Пожалуйста, подтвердите согласие на обработку персональных данных');
+                        return;
+                    }
+                    
+                    // Здесь будет код отправки формы
+                    alert('Бронирование успешно оформлено! Наш менеджер свяжется с вами для подтверждения.');
+                    
+                    // Перенаправление на главную страницу
+                    setTimeout(function() {
+                        window.location.href = 'Сайт-бронирования-автомобилей.html';
+                    }, 2000);
+                });
+            }
+            
+            // Маска для телефона
+            const phoneInput = document.querySelector('input[type="tel"]');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 0 && value[0] !== '7') {
+                        value = '7' + value;
+                    }
+                    let formattedValue = '';
+                    if (value.length > 0) {
+                        formattedValue = '+' + value.substring(0, 1);
+                    }
+                    if (value.length > 1) {
+                        formattedValue += ' (' + value.substring(1, 4);
+                    }
+                    if (value.length > 4) {
+                        formattedValue += ') ' + value.substring(4, 7);
+                    }
+                    if (value.length > 7) {
+                        formattedValue += '-' + value.substring(7, 9);
+                    }
+                    if (value.length > 9) {
+                        formattedValue += '-' + value.substring(9, 11);
+                    }
+                    e.target.value = formattedValue;
+                });
+            }
+            
+            // Установка минимальной даты (сегодня)
+            const dateInput = document.querySelector('input[type="date"]');
+            if (dateInput) {
+                const today = new Date();
+                const dd = String(today.getDate()).padStart(2, '0');
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const yyyy = today.getFullYear();
+                dateInput.min = yyyy + '-' + mm + '-' + dd;
+            }
+        });
+    </script>
+</body>
+</html>
